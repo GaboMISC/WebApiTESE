@@ -1,25 +1,12 @@
-const sql = require('mssql')
+const sql = require('mysql')
 
-const sqlConfig = {
-    user: 'sa',
-    password: 'sasa',
+const sqlConfig = sql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '210916',
     database: 'FormatosTESE',
-    server: 'localhost',
-    pool: {
-        max: 10,
-        min: 0,
-        idleTimeoutMillis: 30000
-    },
-    options: {
-        encrypt: false, // for azure
-        trustServerCertificate: false // change to true for local dev / self-signed certs
-    }
-}
+    port: 3306
+});
 
-sql.connect(sqlConfig)
-
-module.exports = sql
-
-//const result = sql.query`select * from mytable where id = ${value}`
-//console.dir(result)
-
+sqlConfig.connect()
+module.exports = sqlConfig
