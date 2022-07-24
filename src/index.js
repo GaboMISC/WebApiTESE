@@ -13,6 +13,7 @@ app.use(vExpress.json())
 app.use(vBodyParser.json())
 
 app.use('/api', require('./routes/rutaGeneral'))
+app.use('/api', require('./routes/FO-TESE-DA-69-PIDT03'))
 
 app.listen(app.get('port'))
 
