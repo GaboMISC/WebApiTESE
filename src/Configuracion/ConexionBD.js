@@ -3,7 +3,7 @@ const sql = require('mysql')
 const sqlConfig = sql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '210916',
+    password: '123456',
     database: 'FormatosTESE',
     port: 3306
 });
